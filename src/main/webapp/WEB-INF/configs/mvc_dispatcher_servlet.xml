@@ -15,7 +15,7 @@
     <!--注册拦截器-->
     <mvc:interceptors>
         <mvc:interceptor>
-            <mvc:mapping path="/default/index"/>
+            <mvc:mapping path="/index"/>
             <bean class="org.zqu.yiban.schedule.interceptor.AuthorizeInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
