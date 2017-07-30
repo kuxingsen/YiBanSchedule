@@ -6,15 +6,16 @@
     <display-name>Archetype Created Web Application</display-name>
 
     <!--Spring应用上下文，理解层次化的ApplicationContext-->
+    <!--启动web应用上下文，通过web容器监听器引导-->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB-INF/configs/applicationContext.xml</param-value>
+        <param-value>/WEB-INF/configs/mvc_dispatcher_servlet.xml</param-value>
     </context-param>
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
 
-
+    <!--声明自启动的Servlet-->
     <servlet>
         <servlet-name>mvc_dispatcher</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -34,4 +35,9 @@
         <servlet-name>mvc_dispatcher</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/404.jsp</location>
+    </error-page>
+
 </web-app>

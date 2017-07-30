@@ -26,7 +26,8 @@ public class AuthorizeInterceptor implements HandlerInterceptor {
      */
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
-        FrameUtil frameUtil = new FrameUtil(httpServletRequest,httpServletResponse,"3dc8b9e950c61e14","54d426426892253dd6703d56eff7bef2","http://f.yiban.cn/iapp131407");
+        FrameUtil frameUtil = new FrameUtil(httpServletRequest,httpServletResponse,"fd5191068d4d1fb7","014e53c72121ee463c7a5b3d817cfe74","http://zquyiban.s1.natapp.cc");
+        //FrameUtil frameUtil = new FrameUtil(httpServletRequest,httpServletResponse,"3dc8b9e950c61e14","54d426426892253dd6703d56eff7bef2","http://f.yiban.cn/iapp131407");
         boolean perform = frameUtil.perform();
         LOGGER.debug(perform);
         return perform;

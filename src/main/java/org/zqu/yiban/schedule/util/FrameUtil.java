@@ -82,9 +82,9 @@ public class FrameUtil {
         gsonBuilder.registerTypeAdapter(AuthorizeBaseResponse.class, deserializer);
         Gson customGson = gsonBuilder.create();
         AuthorizeBaseResponse response = customGson.fromJson(result, AuthorizeBaseResponse.class);
-        if (response instanceof AuthorizeFailResponse) {
+        if (response instanceof AuthorizeFailResponse) {   //如果response是AuthorizeFailResponse的一个实例
             isAuthed = ((AuthorizeFailResponse) response).isVisit_oauth();
-        } else if (response instanceof AuthorizeSuccResponse) {
+        } else if (response instanceof AuthorizeSuccResponse) {       //如果response是AuthorizeSuccResponse的一个实例
             token = ((AuthorizeSuccResponse) response).getVisit_oauth().getAccess_token();
             userid = ((AuthorizeSuccResponse) response).getVisit_user().getUserid();
             username = ((AuthorizeSuccResponse) response).getVisit_user().getUsername();
@@ -179,6 +179,7 @@ public class FrameUtil {
             ex.printStackTrace();
         }
     }
+
 
     /**
      * 重定向到授权认证页面

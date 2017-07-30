@@ -20,6 +20,7 @@ public class  AuthorizelnterceptorDeserializer implements JsonDeserializer<Autho
                 AuthorizeSuccResponse date = new AuthorizeSuccResponse();
                 date.setVisit_time(jsonObject.get("visit_time").getAsInt());
                 AuthorizeSuccResponse.VisitUserBean userBean = new AuthorizeSuccResponse.VisitUserBean();
+
                 userBean.setUserid(jsonObject.get("visit_user").getAsJsonObject().get("userid").getAsString());
                 userBean.setUsername(jsonObject.get("visit_user").getAsJsonObject().get("username").getAsString());
                 userBean.setUsernick(jsonObject.get("visit_user").getAsJsonObject().get("usernick").getAsString());

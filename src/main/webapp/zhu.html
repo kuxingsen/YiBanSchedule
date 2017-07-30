@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>易新闻--住</title>
+	<link rel="shortcut icon" href="img/xiong.png" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/site.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="htmleaf-container">
+		<header class="htmleaf-header bgcolor-10">
+			<h1 >易新闻--住</h1>
+
+		</header>
+		<div class="container mp30">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+						<a href="index.html"><span class="glyphicon glyphicon-arrow-left"></span><b>返回</b></a></div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-xs-12">
+									<ul class="demo1">
+										<li class="news-item">
+											<table cellpadding="4">
+												<tr>
+													<td><img src="img/zhu/zhu1.jpg" width="60" class="img-circle" /></td>
+													<td>欢迎来到砚都小区, 我是导购员易班君,为了更好满足众人的需求,我公司推出了三种房型...<a href="http://www.yiban.cn/forum/article/show/article_id/24586273/channel_id/76588/puid/5458589">更多</a></td>
+												</tr>
+											</table>
+										</li>
+										
+										
+								
+									
+									
+										
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="panel-footer">
+
+						</div>
+					</div>
+				</div>
+				
+				
+			</div>
+		</div>
+		
+	</div>
+	
+	<script src="js/jquery.min.js" type="text/javascript"></script>
+	<script src="js/jquery.bootstrap.newsbox.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+    $(function () {
+        $(".demo1").bootstrapNews({
+            newsPerPage: 5,
+            autoplay: true,
+			pauseOnHover:true,
+            direction: 'up',
+            newsTickerInterval: 4000,
+            onToDo: function () {
+                //console.log(this);
+            }
+        });
+		
+		$(".demo2").bootstrapNews({
+            newsPerPage: 4,
+            autoplay: true,
+			pauseOnHover: true,
+			navigation: false,
+            direction: 'down',
+            newsTickerInterval: 2500,
+            onToDo: function () {
+                //console.log(this);
+            }
+        });
+
+        $("#demo3").bootstrapNews({
+            newsPerPage: 3,
+            autoplay: false,
+            
+            onToDo: function () {
+                //console.log(this);
+            }
+        });
+    });
+</script>
+
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+<p>肇庆学院易班技术部</p>
+
+</div>
+</body>
+</html>
