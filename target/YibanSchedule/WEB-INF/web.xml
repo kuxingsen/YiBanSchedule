@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <display-name>Archetype Created Web Application</display-name>
+
+    <!--Spring应用上下文，理解层次化的ApplicationContext-->
+    <!--启动web应用上下文，通过web容器监听器引导-->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/configs/mvc_dispatcher_servlet.xml</param-value>
+    </context-param>
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <!--声明自启动的Servlet-->
+    <servlet>
+        <servlet-name>mvc_dispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/configs/mvc_dispatcher_servlet.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+        <multipart-config>
+            <!--<location>/tmp</location>&lt;!&ndash;既是保存路径(在写入的时候，可以忽略路径设定)，又是上传过程中临时文件的保存路径，一旦执行write方法之后，临时文件将被自动清除。&ndash;&gt;-->
+            <max-file-size>20848820</max-file-size><!--允许上传的文件最大值。默认值为 -1，表示没有限制。-->
+            <max-request-size>418018841</max-request-size><!--针对该 multipart/form-data 请求的最大数量，默认值为 -1，表示没有限制。-->
+            <file-size-threshold>1048576</file-size-threshold><!--当数据量大于该值时，内容将被写入文件，默认值为0bytes-->
+        </multipart-config>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>mvc_dispatcher</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/404.jsp</location>
+    </error-page>
+
+</web-app>

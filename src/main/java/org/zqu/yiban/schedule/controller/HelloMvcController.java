@@ -26,22 +26,16 @@ public class HelloMvcController {
 
     private static final Logger LOGGER = Logger.getLogger(HelloMvcController.class);
 
+    private String IP;
+    private String information;
+
     @RequestMapping(value = {"/index.html"})
     public ModelAndView hello(HttpServletRequest request) throws IOException{
-//        Authorize authorize = new Authorize(appKey,appSecret);
-//        String code = request.getParameter("code");
-//        if(code==null||code.isEmpty()){
-//            String url = authorize.forwardurl(callbackUrl,"test", Authorize.DISPLAY_TAG_T.WEB);
-//            response.sendRedirect(url);
-//        }else{
-//            String information = authorize.querytoken(code,callbackUrl);
-//            System.out.println(information);
-//        }
-
         Date date = new Date();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String time = simpleDateFormat.format(date);
-        String information = time+";";
+        IP = getIpAdd(request);
+        information = "IP地址："+IP+" 时间："+time+";\r\n";
         BufferedWriter bufferedWriter = null;
         try {
             bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("D://information.txt", true)));
@@ -60,6 +54,25 @@ public class HelloMvcController {
 
         }
 
+    }
+
+    public  String getIpAdd(HttpServletRequest request) {
+        String ip = request.getHeader("X-Real-IP");
+        if (ip!= null && !"".equals(ip) && !"unknown".equalsIgnoreCase(ip)) {
+            return ip;
+        }
+        ip = request.getHeader("X-Forwarded-For");
+        if (ip!= null && !"".equals(ip)  && !"unknown".equalsIgnoreCase(ip)) {
+            // 多次反向代理后会有多个IP值，第一个为真实IP。
+            int index = ip.indexOf(',');
+            if (index != -1) {
+                return ip.substring(0, index);
+            } else {
+                return ip;
+            }
+        } else {
+            return request.getRemoteAddr();
+        }
     }
 
 //    @RequestMapping(value = {"/"})

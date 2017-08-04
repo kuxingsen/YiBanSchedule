@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--<a href="mailto:2381928951@qq.com">Email</a>-->
+<!--		<a href="mailto:youname@domain.com?subject=title&cc=name1@domain.com,name2@domain.com&bcc=bccname@domain.com&body=hello world!">mailto</a> 
+-->		<title></title>
+	</head>
+	<body>
+		<a href="mailto:to?subject=subject&cc=cc&body=body">send mail</a>
+
+    <!--<form name="form" method="post" action="mailto:2381928951@qq.com" enctype="text/plain">
+    <table cellpadding="0" cellspacing="0">
+        <tr>
+            <th>姓名</th>
+            <td><input type="text" name="name" class="popup-btn"></td>
+        </tr>
+
+        <tr>
+            <th>联系电话</th>
+            <td><input type="text" name="iphone" class="popup-btn"></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td><input name="close"  type="button" onclick="getMailtoUrl()" class="popup-btn popup-btn1" value="提交申请">
+            </td>
+        </tr>
+    </table>
+</form>
+<script type="text/javascript">
+    function getMailtoUrl() {
+        var args = [];
+        if (typeof subject !== 'undefined') {
+            args.push('subject=' + encodeURIComponent('主题内容'));
+        }
+        var name = $("input[name='name']").val();
+        var iphone = $("input[name='iphone']").val();
+        var body = name +"\n"+iphone
+        if (typeof body !== 'undefined') {
+            args.push('body=' + encodeURIComponent(body))
+        }
+
+        var url = 'mailto:' + encodeURIComponent('service@kashuo.com');
+        if (args.length > 0) {
+            url += '?' + args.join('&');
+        }
+        console.log(url);
+        window.location = url;
+        return url;
+    }
+</script>-->
+ <!--<p class="title">CONTACT ME</p>
+  <ul class="email">
+   <li><input type="text" name="name" placeholder="Name"></li>
+   <li><input type="text" name="email" placeholder="Email Address"></li>
+   <li><input type="text" name="number" placeholder="Phone Number"></li>
+   <li class="message"><textarea name="message" placeholder="Message"></textarea> </li>
+   <button class="btn btn-define">Submit</button>
+   <a href="mailto" id="send"></a>
+  </ul>
+  <script type="text/javascript">
+  	function sendEmail(){
+ var name=$("[name='name']").val(),
+  email=$("[name='email']").val(),
+  number=$("[name='number']").val(),
+  message=$("[name='message']").val(),
+  body="My Name is: "+name+"%0a%0d"
+   +"My Email Address is: "+email+"%0a%0d"
+   +"My Phone Number is: "+number+"%0a%0d"
+   +"Message:"+"%0a%0d"+message;
+ $("#send").attr("href","mailto:2381928951@qq.com?body="+body);
+ document.getElementById("send").click();
+}
+$(document).load(
+ $(".btn").click(sendEmail);
+);
+</script>-->
+<input type="button" name="Button" value="点击我">
+window.onload = function() {
+var a = '被点击了';
+var btn = document.getElementByTagName('input')[0];
+btn.onclick = function() { alert(a) }
+}
+
+	</body>
+</html>
