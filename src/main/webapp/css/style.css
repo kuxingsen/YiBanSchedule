@@ -284,15 +284,15 @@ ul, ol {
 /* About Section */
 #about {
 	padding: 80px 0;
-	color: 		#87CEFA;
-	background: #FFFFFF; /* Old browsers */
+	color: 		#87CEEB;
+/*	background: #FFFFFF;*/ /* Old browsers */
 
-	/*background: -webkit-gradient(linear, left top, left bottom, color-stop(70%, 			#00BFFF), color-stop(100%, 		#00BFFF)); 
-	background: -webkit-linear-gradient(top,				#87CEFA 70%,	#00BFFF 100%); 
-	background: -o-linear-gradient(top, 	#87CEFA 70%, 	#00BFFF 100%); 
-	background: -ms-linear-gradient(top, 	#87CEFA 70%, 	#00BFFF 100%); 
-	background: linear-gradient(to bottom, 			#87CEFA 70%, 	#00BFFF 100%); */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='			#87CEFA', endColorstr='	#87CEEB', GradientType=0 ); /* IE6-9 */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(70%, 		#87CEEB ), color-stop(100%, 		#00BFFF)); 
+	background: -webkit-linear-gradient(top,				#87CEEB 70%,	#00BFFF 100%); 
+	background: -o-linear-gradient(top, 		#87CEEB 70%, 	#00BFFF 100%); 
+	background: -ms-linear-gradient(top, 	#87CEEB 70%, 	#00BFFF 100%); 
+	background: linear-gradient(to bottom, 				#87CEEB 70%, 	#00BFFF 100%); 
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='				#87CEEB', endColorstr='	#87CEEB', GradientType=0 ); /* IE6-9 */
 }
 #about .about-text {
 	margin-left: 10px;
@@ -315,7 +315,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='			#87CEFA', 
 	float: left;
 	display: block;
 	margin-right: 15px;
-	color: #00BFFF;
+	color:#FFFFFF;
 	font-size: 24px;
 	text-shadow: 0 0 1px #666;
 }
